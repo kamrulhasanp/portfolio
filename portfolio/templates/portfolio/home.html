@@ -12,27 +12,25 @@
 
 
     <div class="container">
-        <div class="row">
+        <div class="row"  >
             {% for projects in  projects %}
-                <div class="col">
-                    <h1>{{ projects.title }}</h1>
+                <div class="col" style="padding-top: 20px ">
+                <div class="row">
+                     <h1>{{ projects.title }}</h1>
                     <p>{{ projects.description }}</p>
-
-                    <img src="{{ projects.image.url }}" height=700 width=500 alt="">
-                    <br>
-                    {% if projects.urls %}
-                        <a href="{{ projects.urls }}"> Link</a>
-
+                     {% if projects.urls %}
+                        <a href="{{ projects.urls }} "> More details</a>
                     {% endif %}
 
+                </div>
+                    <img src="{{ projects.image.url }}" height=700 width= auto;>
+                    <br>
                 </div>
             {% endfor %}
 
         </div>
     </div>
     <br>
-
-
 
 {% endblock %}
 

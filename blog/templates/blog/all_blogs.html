@@ -1,14 +1,16 @@
 {% extends 'portfolio/base.html' %}
 {% block contant %}
     <div class="container">
-        <h1>There are all blogs </h1> <br>
-        <h2>Kamrul have {{ blogs.count }} blog{{ blogs.count| pluralize }}</h2>
+        <h1 class="text-center">There are all blogs </h1> <br>
+        <h2 class="text-center">Kamrul's Have {{ blogs.count }} Blog{{ blogs.count| pluralize }}</h2>
+         <hr>
 
         {% for blog in blogs %}
             <a href="{% url 'blog:detail' blog.id %}" style="text-decoration: none"><h1>{{ blog.title }}</h1></a>
             {{ blog.date|date:'M d Y'|upper }}
             <p>{{ blog.description|striptags|truncatechars:500 }}</p>
         {% endfor %}
+
     </div>
 
 {% endblock %}
